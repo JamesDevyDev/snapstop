@@ -134,7 +134,7 @@ const Landing = () => {
           {[
             {
               title: "Multiple Layouts",
-              desc: "1×1, 1×2, 1×3, and 2×2 grids, pick the strip that fits your vibe.",
+              desc: "1×2, 1×3, and 2×2 grids, pick the strip that fits your vibe.",
               icon: (
                 <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
                   <g className="anim-layout1">

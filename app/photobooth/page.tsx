@@ -7,7 +7,6 @@ type Layout = { id: string; cols: number; rows: number; label: string };
 type Phase = "setup" | "booth" | "edit" | "result";
 
 const LAYOUTS: Layout[] = [
-    { id: "1x1", cols: 1, rows: 1, label: "1×1" },
     { id: "1x2", cols: 1, rows: 2, label: "1×2" },
     { id: "2x2", cols: 2, rows: 2, label: "2×2" },
     { id: "1x3", cols: 1, rows: 3, label: "1×3" },
@@ -29,14 +28,8 @@ const BG_COLOR_PRESETS = [
     { hex: "#111111", label: "Black" },
     { hex: "#E43B37", label: "Red" },
     { hex: "#F59E0B", label: "Amber" },
-    { hex: "#10B981", label: "Emerald" },
     { hex: "#3B82F6", label: "Blue" },
     { hex: "#8B5CF6", label: "Violet" },
-    { hex: "#EC4899", label: "Pink" },
-    { hex: "#F97316", label: "Orange" },
-    { hex: "#06B6D4", label: "Cyan" },
-    { hex: "#84CC16", label: "Lime" },
-    { hex: "#6B7280", label: "Gray" },
 ];
 
 const STICKER_OPTIONS = ["🌟", "💖", "🎉", "✨", "🌈", "🔥", "🌸", "😎", "🎀", "🦋"];
@@ -107,6 +100,10 @@ const Photobooth = () => {
     const [isRunning, setIsRunning] = useState(false);
     const [isMirrored, setIsMirrored] = useState(true);
 
+
+    const isMirroredRef = useRef(isMirrored);
+    useEffect(() => { isMirroredRef.current = isMirrored; }, [isMirrored]);
+
     const [pendingSticker, setPendingSticker] = useState<string | null>(null);
     const previewImgRef = useRef<HTMLImageElement>(null);
     const previewContainerRef = useRef<HTMLDivElement>(null);
@@ -157,7 +154,7 @@ const Photobooth = () => {
         canvas.width = video.videoWidth || 640;
         canvas.height = video.videoHeight || 480;
         const ctx = canvas.getContext("2d")!;
-        if (isMirrored) {
+        if (isMirroredRef.current) {
             ctx.save(); ctx.scale(-1, 1); ctx.drawImage(video, -canvas.width, 0); ctx.restore();
         } else {
             ctx.drawImage(video, 0, 0);
@@ -504,13 +501,13 @@ const Photobooth = () => {
                             </div>
                         )}
                         {flashing && <div className="absolute inset-0 bg-white z-20 pointer-events-none" />}
-                        <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">{photos.length}/{total}</div>
+                        <div className="z-11 absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">{photos.length}/{total}</div>
 
                         {/* Mirror toggle */}
                         <button
                             onClick={() => setIsMirrored((m) => !m)}
                             title={isMirrored ? "Switch to normal" : "Switch to mirror"}
-                            className="cursor-pointer absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-black/80 transition-colors"
+                            className="z-11 cursor-pointer absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-black/80 transition-colors"
                         >
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2v20M2 12l4-4m-4 4l4 4M22 12l-4-4m4 4l-4 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
