@@ -395,7 +395,7 @@ const Photobooth = () => {
             {/* SETUP PHASE                                                    */}
             {/* ══════════════════════════════════════════════════════════════ */}
             {phase === "setup" && (
-                <main className="max-w-[900px] mx-auto px-5 sm:px-10 py-5 sm:py-16 flex flex-col gap-12">
+                <main className="max-w-[900px] mx-auto px-5 py-15 flex flex-col gap-12">
                     <div className="flex flex-col gap-2">
                         <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-[#111] leading-[1.05]">Set up your booth</h1>
                         <p className="text-[#777] font-semibold text-sm sm:text-base">Choose your camera, layout, and timer then snap away.</p>
@@ -472,7 +472,7 @@ const Photobooth = () => {
             {/* BOOTH PHASE                                                    */}
             {/* ══════════════════════════════════════════════════════════════ */}
             {phase === "booth" && (
-                <main className="max-w-[900px] mx-auto px-5 sm:px-10 py-8 flex flex-col gap-6">
+                <main className="max-w-[900px] mx-auto px-5 py-15 flex flex-col gap-6">
                     <div className="flex items-center justify-between">
                         <div>
                             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-[#111]">
@@ -551,7 +551,7 @@ const Photobooth = () => {
             {/* EDIT PHASE                                                     */}
             {/* ══════════════════════════════════════════════════════════════ */}
             {phase === "edit" && (
-                <main className="max-w-[1100px] mx-auto px-5 sm:px-10 py-5 flex flex-col gap-6">
+                <main className="max-w-[1100px] mx-auto px-5 py-15 flex flex-col gap-6">
                     <div className="flex items-start justify-between gap-4">
                         <div className="flex flex-col gap-1">
                             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#111]">Edit your strip</h2>
@@ -742,7 +742,7 @@ const Photobooth = () => {
             {/* RESULT PHASE                                                   */}
             {/* ══════════════════════════════════════════════════════════════ */}
             {phase === "result" && resultUrl && (
-                <main className="max-w-[900px] mx-auto px-5 sm:px-10 py-5 flex flex-col gap-8">
+                <main className="max-w-[900px] mx-auto px-5 py-15 flex flex-col gap-8">
                     <div className="flex items-start justify-between gap-4">
                         <div className="flex flex-col gap-2">
                             <p className="text-xs font-bold tracking-widest text-[#E43B37] uppercase">All done!</p>

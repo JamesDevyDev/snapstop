@@ -418,16 +418,26 @@ const MacBookMockup = () => {
                 style={{ boxShadow: "0 6px 28px rgba(0,0,0,0.5)" }}
               >
                 {/* Browser chrome */}
-                <div className="flex items-center gap-1 sm:gap-2 px-1.5 sm:px-2.5 h-[12px] sm:h-[20px] bg-[#e8e8e8] border-b border-[#ccc]">
-                  {/* Traffic lights */}
+                <div className="
+flex items-center gap-1 sm:gap-2 px-1.5 sm:px-2.5 h-[12px] sm:h-[20px]
+bg-[#e8e8e8] border-b border-[#ccc]
+dark:bg-[#2b2b2b] dark:border-[#444]
+">                  {/* Traffic lights */}
                   <div className="flex items-center gap-[3px]">
                     <div className="w-[5px] h-[5px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#ff5f57]" />
                     <div className="w-[5px] h-[5px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#febc2e]" />
                     <div className="w-[5px] h-[5px] sm:w-[8px] sm:h-[8px] rounded-full bg-[#28c840]" />
                   </div>
                   {/* Address bar */}
-                  <div className="flex-1 flex items-center gap-1 bg-white/90 rounded-[2px] sm:rounded-[4px] px-1 sm:px-1.5 h-[7px] sm:h-[12px] border border-[#d0d0d0]">
-                    <span className="text-[3.5px] sm:text-[7px] text-[#555] font-medium truncate leading-none">snapstop</span>
+                  <div className="
+flex-1 flex items-center gap-1
+bg-white/90 border border-[#d0d0d0]
+dark:bg-[#1f1f1f] dark:border-[#444]
+rounded-[2px] sm:rounded-[4px]
+px-1 sm:px-1.5 h-[7px] sm:h-[12px]
+">                    <span className="text-[3.5px] sm:text-[7px] text-[#555] dark:text-[#ccc] font-medium truncate leading-none">
+                      snapstop
+                    </span>
                   </div>
                 </div>
 

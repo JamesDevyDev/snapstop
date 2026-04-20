@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Footer = () => {
     return (
-        <div className="min-h-screen bg-[#eeecea] flex flex-col relative overflow-hidden">
+        <div className="min-h-screen bg-[#eeecea] font-[Figtree] flex flex-col relative overflow-hidden">
 
             {/* Decorative large background number / watermark */}
             <div
@@ -18,7 +18,7 @@ const Footer = () => {
 
                 {/* Headline */}
                 <h2
-                    className="font-[Figtree] font-black text-[#111] leading-[1.0] tracking-tight mb-8"
+                    className=" font-black text-[#111] leading-[1.0] tracking-tight mb-8"
                     style={{ fontSize: "clamp(48px, 8vw, 112px)" }}
                 >
                     Try it.<br />
@@ -37,17 +37,11 @@ const Footer = () => {
                         href="/photobooth"
                         className="inline-flex items-center gap-3 bg-[#111] text-white rounded-full px-8 py-4 text-base font-black hover:bg-[#333] transition-colors no-underline group"
                     >
-                        {/* Camera icon */}
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                            <path
-                                d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
-                                stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                            />
-                            <circle cx="12" cy="13" r="4" stroke="white" strokeWidth="2" />
-                        </svg>
-                        Open Photobooth
-                        <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+
+                        Get Started
                     </a>
+
+                    
 
                     <p className="text-[#bbb] text-xs font-semibold self-center">
                         Works in any modern browser
